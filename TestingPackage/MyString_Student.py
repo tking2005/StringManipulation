@@ -24,7 +24,7 @@ class MyString():
 
     #Returns a string that consists of the substring between start and end indexes (both included) in the current string.
     #Index 1 corresponds to the first character in the current string.'''
-    def getSubstring( self,start, end):
+    def getSubstring( self,start,end):
         originalWord = self.str
         wordCount = len(originalWord)
         subString = ""
@@ -57,12 +57,13 @@ class MyString():
         originalWord = self.str
         wordCount = len(originalWord)
         wordIndex = c
-
-        for count in range(0, wordCount):
-            if originalWord[count] == wordIndex:
-                return count
-                vowels = vowels + self.str[a]
-            return originalWord[wordIndex]
+        counter = 0
+        while counter < wordCount:
+            if originalWord[counter] != wordIndex:
+                counter+=1
+            else:
+                return counter+1
+        return 0
 
     #Returns the index of the first occurrence of a character in the current string.
     #Index 1 corresponds to the first character in the current string.
